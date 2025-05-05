@@ -1,0 +1,79 @@
+=== Ticket 001 ===
+Problema: El sistema no responde al hacer clic en el botón "Enviar" en la página de contacto.
+Solución: Se solucionó el problema actualizando el código JavaScript que manejaba el evento de clic, corrigiendo un error en la validación de formularios.
+
+=== Ticket 002 ===
+Problema: La impresora no imprime, pero parece estar conectada correctamente.
+Solución: Se reinstaló el controlador de la impresora y se reinició el servicio de spooler de impresión. La impresora volvió a funcionar.
+
+=== Ticket 003 ===
+Problema: El servidor no se conecta a la red después de una actualización.
+Solución: Se reconfiguró la interfaz de red y se reinició el servidor. También se verificó que el firewall no estuviera bloqueando las conexiones entrantes.
+
+=== Ticket 004 ===
+Problema: El cliente reporta que su conexión Wi-Fi es inestable.
+Solución: Se reconfiguraron los parámetros de su router, mejorando la distribución de la señal y eliminando interferencias en la red.
+
+=== Ticket 005 ===
+Problema: La aplicación se cierra inesperadamente al cargar los datos.
+Solución: Se identificó un error en el manejo de excepciones dentro del código y se actualizó la versión del SDK. La aplicación ahora funciona correctamente.
+
+=== Ticket 006 ===
+Problema: No se pueden acceder a las bases de datos del sistema ERP.
+Solución: Se restableció la conexión a la base de datos y se optimizó el rendimiento de la consulta para reducir los tiempos de espera.
+
+=== Ticket 007 ===
+Problema: El cliente no puede abrir archivos PDF adjuntos en los correos electrónicos.
+Solución: Se actualizó el software de lector de PDF y se verificó que no hubiera restricciones de seguridad que bloqueasen los archivos adjuntos.
+
+=== Ticket 008 ===
+Problema: El servidor de correo electrónico presenta retrasos en la entrega de mensajes.
+Solución: Se ajustaron los parámetros del servidor SMTP y se revisaron las configuraciones de las colas de correo para optimizar la entrega.
+
+=== Ticket 009 ===
+Problema: El equipo no detecta el monitor adicional conectado por HDMI.
+Solución: Se actualizó el controlador de la tarjeta gráfica y se reinició el sistema. El monitor adicional comenzó a funcionar correctamente.
+
+=== Ticket 010 ===
+Problema: Los usuarios no pueden acceder a los archivos compartidos en la red.
+Solución: Se reconfiguraron los permisos de acceso y se reinició el servidor de archivos. Los usuarios ahora pueden acceder correctamente.
+
+=== Ticket 011 ===
+Problema: El usuario no puede revertir el lote en el modulo de descarte.
+Solución: Buscar el botón rojo con la flecha, utilizar la credencial "acceso_1" pero antes de ello verificar si el lote ya fue calibrado.
+
+=== Ticket 012 ===
+Problema: La impresora de red no está respondiendo.
+Solución: Se verificó la conexión a la red y se reinició la impresora. También se actualizó el firmware de la impresora para corregir posibles fallos de compatibilidad.
+
+=== Ticket 013 ===
+Problema: No se puede acceder al sitio web desde ciertos dispositivos móviles.
+Solución: Se corrigió un problema de compatibilidad con la resolución de pantalla en dispositivos móviles y se actualizó el diseño responsivo del sitio web.
+
+=== Ticket 014 ===
+Problema: El equipo reporta error al ejecutar un archivo de Excel.
+Solución: Se actualizó la versión de Microsoft Office y se reparó la instalación de Excel. El archivo se abrió correctamente después de la actualización.
+
+=== Ticket 015 ===
+Problema: El cliente no puede sincronizar sus calendarios entre dispositivos.
+Solución: Se verificó la configuración de la cuenta de sincronización y se resolvió el conflicto en los permisos de la cuenta. La sincronización se completó correctamente.
+
+=== Ticket 016 ===
+Problema: La red VPN está extremadamente lenta.
+Solución: Se aumentó el ancho de banda disponible en el servidor VPN y se optimizó la configuración de cifrado, mejorando significativamente la velocidad de la conexión.
+
+=== Ticket 017 ===
+Problema: El sistema no está generando reportes en formato PDF.
+Solución: Se solucionó un problema en el generador de PDFs y se verificaron los permisos de escritura en el directorio de destino.
+
+=== Ticket 018 ===
+Problema: El correo electrónico no se envía a ciertos destinatarios.
+Solución: Se identificó un problema en la configuración del servidor SMTP y se reconfiguraron los ajustes de envío. Los correos ahora se envían correctamente.
+
+=== Ticket 019 ===
+Problema: El equipo muestra un error de "Pantalla azul" al iniciar.
+Solución: Se diagnosticó un problema con la memoria RAM, que fue reemplazada por una nueva. El sistema arrancó sin problemas después de la reparación.
+
+=== Ticket 020 ===
+Problema: Los usuarios no pueden acceder al portal de intranet desde fuera de la red corporativa.
+Solución: Se configuraron correctamente las VPN y se habilitaron los puertos necesarios en el firewall para permitir el acceso remoto seguro al portal.
