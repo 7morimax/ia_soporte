@@ -4,6 +4,7 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings import SentenceTransformerEmbeddings
 from langchain.docstore.document import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+import re
 
 # Paso 1: Cargar y dividir el único archivo por ticket
 def load_tickets_from_file(file_path):
@@ -36,19 +37,22 @@ def create_vectorstore(chunks):
 
 # Paso 4: Consulta a Ollama con contexto
 def ask_deepseek(prompt, context):
-    full_prompt = f"""Responde basándote en el siguiente contexto técnico, tienes que ser breve, al final de cada respuesta indicar que el area de Sistemas se comunicará:\n\n{context}\n\nPregunta: {prompt}"""
-    
-    response = requests.post(
-        "http://localhost:11434/api/generate",
-        json={
-            "model": "deepseek-r1:7b",
-            "prompt": full_prompt,
-            "stream": False
-        }
+    full_prompt = (
+        f"Responde la siguiente pregunta basándote únicamente en el contexto dado, "
+        f"Sé específico y claro. Si no encuentras la información, di que no puedes responder:\n\n"
+        f"{context}\n\nPregunta: {prompt}"
     )
-    
-    print(response.json())  # 👈 Esto te mostrará qué devuelve exactamente
-    return response.json()
+    res = requests.post(
+        "http://localhost:11434/api/generate",
+        json={"model": "deepseek-r1:7b", "prompt": full_prompt, "stream": False},
+    )
+    data = res.json()
+    # Extraemos solo el texto de la respuesta
+    answer = data.get("response") or (data.get("message") or {}).get("content", "")
+    # Eliminamos cualquier bloque <think>...</think>
+    answer = re.sub(r"<think>.*?</think>\s*", "", answer, flags=re.DOTALL)
+    return answer.strip()
+
 
 
 # --- FLUJO PRINCIPAL ---
@@ -70,9 +74,9 @@ def main():
         docs = vectorstore.similarity_search(question, k=3)
         context = "\n".join([doc.page_content for doc in docs])
 
-        print("🤖 DeepSeek responde...")
         respuesta = ask_deepseek(question, context)
-        print(f"\n📝 Respuesta: {respuesta}")
+        print("\n📝 Respuesta:")
+        print(respuesta)
 
 if __name__ == "__main__":
     main()
